@@ -27,9 +27,9 @@ export function useMachineState<StatesT, DataT, FinalT>(machine: Machine<StatesT
         const listener = () => {
             setStateValue(machine.state);
         };
-        machine.on('statechange', listener);
+        machine.on('change', listener);
         return () => {
-            machine.off('statechange', listener);
+            machine.off('change', listener);
         };
     }, [machine]);
 

@@ -18,9 +18,9 @@ export function useMachineState(machine) {
         var listener = function () {
             setStateValue(machine.state);
         };
-        machine.on('statechange', listener);
+        machine.on('change', listener);
         return function () {
-            machine.off('statechange', listener);
+            machine.off('change', listener);
         };
     }, [machine]);
     return state;
