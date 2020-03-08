@@ -1,0 +1,21 @@
+{
+    "name": "idaho-react",
+    "version": "0.0.1",
+    "description": "React Hooks for Idaho",
+    "main": "dist/index.js",
+    "author": "Stu Kabakoff <stutrek@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "prebuild": "rm -rf ./dist",
+        "build": "tsc"
+    },
+    "dependencies": {
+        "@types/react": "^16.9.23",
+        "idaho": "^0.1.3",
+        "react": "^16.13.0"
+    },
+    "devDependencies": {
+        "typescript": "^3.8.3"
+    },
+    "repository": "http://github.com/stutrek/idaho-react.git"
+}
