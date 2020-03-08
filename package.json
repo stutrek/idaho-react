@@ -9,7 +9,7 @@
         "prebuild": "rm -rf ./dist",
         "build": "tsc"
     },
-    "dependencies": {
+    "peerDependencies": {
         "@types/react": "^16.9.23",
         "idaho": "^0.1.3",
         "react": "^16.13.0"
