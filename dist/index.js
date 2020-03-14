@@ -38,4 +38,17 @@ export function useMachineData(machine) {
     }, [machine]);
     return data;
 }
+export function useMachine(machine) {
+    var _a = useState(0), counter = _a[0], triggerUpdate = _a[1];
+    useEffect(function () {
+        var listener = function () {
+            triggerUpdate(counter + 1);
+        };
+        machine.on('change', listener);
+        return function () {
+            machine.off('change', listener);
+        };
+    }, [machine]);
+    return machine;
+}
 //# sourceMappingURL=index.js.map

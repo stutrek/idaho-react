@@ -53,3 +53,21 @@ export function useMachineData<StatesT, DataT, FinalT>(
 
     return data;
 }
+
+export function useMachine<StatesT, DataT, FinalT>(
+    machine: Machine<StatesT, DataT, FinalT>
+): Machine<StatesT, DataT, FinalT> {
+    const [counter, triggerUpdate] = useState(0);
+
+    useEffect(() => {
+        const listener = () => {
+            triggerUpdate(counter + 1);
+        };
+        machine.on('change', listener);
+        return () => {
+            machine.off('change', listener);
+        };
+    }, [machine]);
+
+    return machine;
+}
