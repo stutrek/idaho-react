@@ -21,7 +21,7 @@ export function useMachineStateName<StatesT, DataT, FinalT>(
 }
 
 export function useMachineState<StatesT, DataT, FinalT>(machine: Machine<StatesT, DataT, FinalT>) {
-    const [state, setStateValue] = useState(machine.state);
+    const [state, setStateValue] = useState<StatesT>(machine.state);
 
     useEffect(() => {
         const listener = () => {
